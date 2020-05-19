@@ -1,35 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Instructions";
 }
 
 <div>
-    <h3>Directions:</h3>
+    <h3>Your Mission:</h3>
     <p>
         Complete the implementation of IToDoItemService. The service will be responsible for making calls to a REST Api and returning the results.
-        Base URL located in appsettings.json.
+        The URL for the ToDos Api is "https://jsonplaceholder.typicode.com/todos", this is also provided in the appsettings.json file in the solution. You can review the Api's documentation at the base url: <a href="https://jsonplaceholder.typicode.com">https://jsonplaceholder.typicode.com</a>
     </p>
-    <ul>
+    <p>Use any libraries or resources available. Feel free to email any questions to <a href="mailto:allen_wood@nceb.uscourts.gov">Allen_Wood@nceb.uscourts.gov</a></p>
+    <ol>
         <li>
-            Complete the class ToDoItem to be used to deserialize the results.
+            You will need to complete the class ToDoItem to be used to deserialize the results.
         </li>
         <li>
-            ToDoService.GetAll should return all ToDoItems.
-        </li>
-        <li>
-            ToDoService.GetAllCompleted should return all ToDoItems that are marked as complete.
-        </li>
-        <li>
-            ToDoService.GetIncompleteForUser should return all ToDoItems that are not marked as complete for a given user ID.
+            You will need to complete the implementation of ToDoItemService. Each method should return a List<ToDoItem>
+            <ul>
+                <li>ToDoService.GetAll should return all ToDoItems.</li>
+                <li>ToDoService.GetAllCompleted should return any ToDoItems that are marked as complete.</li>
+                <li>ToDoService.GetIncompleteForUser should any ToDoItems that are not marked as complete for a given user ID.</li>
+            </ul>
         </li>
         <li>
             (optional) Register the service for Dependency Injection.
         </li>
         <li>
-            Create a View to display the data returned from one of the methods in the service.
+            Using the Index() method of the ToDoController to get the results of ToDoService.GetAll(). Create a view to display the results.
         </li>
         <li>
-            Add a link to the View to the site's navigation bar.
+            Add a link to the created View to the site's navigation bar.
         </li>
-    </ul>
+        <li>In the ToDoServiceTests class in the UnitTestProject, uncomment the lines with Asserts. (17, 25, 34 and 35). All tests should pass when the challenge is complete.</li>
+    </ol>
 
 </div>
