@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 
 namespace InterviewChallenge
@@ -25,6 +26,7 @@ namespace InterviewChallenge
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.TryAddScoped<IToDoService>(t => new ToDoService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
