@@ -20,7 +20,7 @@ namespace InterviewChallenge
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<IToDoService>( t => new ToDoService());
+            services.AddScoped<IToDoService, ToDoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
