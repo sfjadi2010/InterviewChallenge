@@ -19,16 +19,19 @@ namespace InterviewChallenge.Controllers
         
         public IActionResult Index()
         {
-            return View();
+            var result = _toDoService.GetAll();
+            return View(result);
         }
 
         public IActionResult Completed()
         {
+            var result = _toDoService.GetAllCompleted();
             return View();
         }
 
         public IActionResult Current(int id)
         {
+            var result = _toDoService.GetIncompleteForUser(id);
             return View();
         }
     }

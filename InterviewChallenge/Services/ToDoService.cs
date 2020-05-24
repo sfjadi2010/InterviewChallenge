@@ -1,26 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using InterviewChallenge.Models;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace InterviewChallenge.Services
 {
     public class ToDoService : IToDoService
     {
+        private readonly IToDoHttpClient _httpClient;
+        public ToDoService()
+        {
+            _httpClient = new ToDoHttpClient();
+        }
         public List<ToDoItem> GetAll()
         {
-            throw new NotImplementedException();
+            return _httpClient.GetAsync("").Result;
         }
 
         public List<ToDoItem> GetAllCompleted()
         {
-            throw new NotImplementedException();
+            return _httpClient.GetAsync($"completed=true").Result;
         }
 
         public List<ToDoItem> GetIncompleteForUser(int id)
         {
-            throw new NotImplementedException();
+            return _httpClient.GetAsync($"completed=false&userId={id}").Result;
         }
     }
 }

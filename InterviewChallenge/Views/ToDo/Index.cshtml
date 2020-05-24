@@ -1,5 +1,32 @@
-﻿@*
+﻿@model IEnumerable<ToDoItem>;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 task-text complete">
+                        <div class="row">
+                            <p class="font-italic">Title</p>
+                        </div>
+                        <div class="row">
+                            <p class="font-italic font-weight-bolder task-text">@item.Title</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
+                        <div class="row">
+                            <p class="font-italic">Completed</p>
+                        </div>
+                        <div class="row">
+                            @Html.CheckBox("Completed", @item.Completed, new { @class = "form-check-inline"})
+                        </div>
+                        <label></label>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>

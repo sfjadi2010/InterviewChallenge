@@ -14,7 +14,7 @@ namespace UnitTestProject
             var service = new ToDoService();
             var results = service.GetAll();
             Assert.Equal(200, results.Count);
-            //Assert.Equal("delectus aut autem", results.First().title);
+            Assert.Equal("delectus aut autem", results.First().Title);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace UnitTestProject
         {
             var service = new ToDoService();
             var results = service.GetAllCompleted();
-            //Assert.True(results.First().completed);
+            Assert.True(results.First().Completed);
         }
 
         [Fact]
@@ -31,8 +31,8 @@ namespace UnitTestProject
             var service = new ToDoService();
             var results = service.GetIncompleteForUser(5);
             Assert.Equal(8,results.Count);
-            //Assert.Equal(5, results.First().userId);
-            //Assert.False(results.First().completed);
+            Assert.Equal(5, results.First().UserId);
+            Assert.False(results.First().Completed);
         }
     }
 }
