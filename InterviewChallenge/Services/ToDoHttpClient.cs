@@ -13,11 +13,9 @@ namespace InterviewChallenge.Services
     {
         private readonly IConfiguration _configuration;
 
-        public ToDoHttpClient()
+        public ToDoHttpClient(IConfiguration configuration)
         {
-            _configuration = new ConfigurationBuilder()
-                                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                                .Build();
+            _configuration = configuration;
         }
         public async Task<List<ToDoItem>> GetAsync(string requestUri)
         {

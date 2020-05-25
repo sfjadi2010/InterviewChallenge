@@ -12,9 +12,9 @@ namespace InterviewChallenge.Services
     public class ToDoService : IToDoService
     {
         private readonly IToDoHttpClient _httpClient;
-        public ToDoService()
+        public ToDoService(IToDoHttpClient httpClient)
         {
-            _httpClient = new ToDoHttpClient();
+            _httpClient = httpClient;
         }
         public List<ToDoItem> GetAll()
         {

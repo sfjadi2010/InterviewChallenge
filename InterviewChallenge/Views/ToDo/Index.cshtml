@@ -5,21 +5,11 @@
     {
         <li class="list-group-item">
             <div class="row">
-                <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 task-text complete">
-                    <div class="row">
-                        <p class="font-italic">Title</p>
-                    </div>
-                    <div class="row">
-                        <p class="font-italic font-weight-bolder task-text">@item.Title</p>
-                    </div>                        
+                <div class="col-md-11 col-xs-11 col-lg-11 col-sm-11 task-text">
+                    <span class="font-italic font-weight-bolder task-text">@item.Title</span>
                 </div>
                 <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
-                    <div class="row">
-                        <p class="font-italic">Completed</p>
-                    </div>
-                    <div class="row">
-                        @Html.CheckBox("Completed", @item.Completed, new { @class = "form-check-inline"})
-                    </div>                        
+                    <span class="align-content-end">@Html.CheckBox("Completed", @item.Completed, new { @class = "form-check-inline" })</span>
                 </div>
             </div>
         </li>
